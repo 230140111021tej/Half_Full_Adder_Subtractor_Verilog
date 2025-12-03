@@ -1,0 +1,86 @@
+**Half Adder**
+
+
+`include "half_adder.v"
+
+module test_half_adder;
+    reg a, b;
+    wire sum, carry;
+    half_adder DUT(a, b, sum, carry);
+    initial begin
+        $display("Half Adder Truth Table");
+        $display("A B | SUM CARRY");
+        for (integer i = 0; i < 4; i = i + 1) begin
+            a = i[1]; b = i[0];
+            #1;
+            $display("%b %b |  %b    %b", a, b, sum, carry);
+        end
+        $finish;
+    end
+endmodule
+
+
+**Full Adder**
+
+
+`include "full_adder.v"
+
+module test_full_adder;
+    reg a, b, cin;
+    wire sum, carry;
+    full_adder DUT(a, b, cin, sum, carry);
+    initial begin
+        $display("Full Adder Truth Table");
+        $display("A B CIN | SUM CARRY");
+        for (integer i = 0; i < 8; i = i + 1) begin
+            a = i[2]; b = i[1]; cin = i[0];
+            #1;
+            $display("%b %b  %b |  %b    %b", a, b, cin, sum, carry);
+        end
+        $finish;
+    end
+endmodule
+
+
+**Half Subtractor**
+
+
+`include "half_subtractor.v"
+
+module test_half_subtractor;
+    reg a, b;
+    wire diff, borrow;
+    half_subtractor DUT(a, b, diff, borrow);
+    initial begin
+        $display("Half Subtractor Truth Table");
+        $display("A B | DIFF BORROW");
+        for (integer i = 0; i < 4; i = i + 1) begin
+            a = i[1]; b = i[0];
+            #1;
+            $display("%b %b |  %b     %b", a, b, diff, borrow);
+        end
+        $finish;
+    end
+endmodule
+
+
+**Full Subtractor**
+
+
+`include "full_subtractor.v"
+
+module test_full_subtractor;
+    reg a, b, bin;
+    wire diff, borrow;
+    full_subtractor DUT(a, b, bin, diff, borrow);
+    initial begin
+        $display("Full Subtractor Truth Table");
+        $display("A B BIN | DIFF BORROW");
+        for (integer i = 0; i < 8; i = i + 1) begin
+            a = i[2]; b = i[1]; bin = i[0];
+            #1;
+            $display("%b %b  %b |  %b     %b", a, b, bin, diff, borrow);
+        end
+        $finish;
+    end
+endmodule
