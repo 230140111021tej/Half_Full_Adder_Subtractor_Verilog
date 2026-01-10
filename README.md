@@ -1,7 +1,6 @@
 # Half & Full Adder/Subtractor in Verilog (Vivado Verified)
 
-This repository features **robust, simulation-validated implementations of Half/Full Adders and Subtractors** in Verilog. The designs are modular, testbench-driven, and suitable as foundational arithmetic blocks in digital logic design.  
-All modules are synthesized and visualized using industry-standard tools like **Xilinx Vivado** and simulated with open-source tools (Icarus Verilog, GTKWave).
+This repository features **robust, simulation-validated implementations of Half/Full Adders and Subtractors** in Verilog. All designs are modular, fully testbench-driven, and synthesized/visualized in **Xilinx Vivado**. Simulations are also provided using open-source tools (Icarus Verilog, GTKWave).
 
 ---
 
@@ -19,34 +18,32 @@ All modules are synthesized and visualized using industry-standard tools like **
 
 ---
 
-- **Full Adder**  
-  [YouTube Demo](https://youtube.com/shorts/YUpM37PON2s?feature=shared)
+### Related Demo Videos
 
-- **Full Subtractor**  
-  [YouTube Demo](https://youtube.com/shorts/F-r96FAdp4E?si=rx6YhmUOveSDVush)
+- **Full Adder**: [YouTube](https://youtube.com/shorts/YUpM37PON2s?feature=shared)
+- **Full Subtractor**: [YouTube](https://youtube.com/shorts/F-r96FAdp4E?si=rx6YhmUOveSDVush)
+- **Half Adder**: [YouTube](https://youtube.com/shorts/DaoT0IykHmo?si=SLKe4n4rGXW07Vkw)
+- **Half Subtractor**: [YouTube](https://youtube.com/shorts/OssNW_W3E6k?si=Qf98I_jwUKjFF4Ek)
 
-- **Half Adder**  
-  [YouTube Demo](https://youtube.com/shorts/DaoT0IykHmo?si=SLKe4n4rGXW07Vkw)
-
-- **Half Subtractor**  
-  [YouTube Demo](https://youtube.com/shorts/OssNW_W3E6k?si=Qf98I_jwUKjFF4Ek)
-
-  ---
+---
 
 ## Project Overview
 
-This project implements and verifies:
+Implements and verifies the following:
 - **Half Adder / Full Adder**
 - **Half Subtractor / Full Subtractor**
 
-All designs are written in concise, industry-style Verilog. Each block comes with a dedicated testbench, RTL and technology-level schematics, and sample simulation waveforms.
+Each design follows modular, industry-style Verilog practices and comes with:
+- A dedicated testbench
+- RTL and technology-level schematics
+- Example simulation waveforms
 
-- **Tech Stack:**  
-  - *Design:* Verilog HDL  
-  - *Simulation:* Icarus Verilog, GTKWave  
-  - *Synthesis, Schematics:* Xilinx Vivado
+**Tech Stack:**  
+- *Design*: Verilog HDL  
+- *Simulation*: Icarus Verilog, GTKWave  
+- *Synthesis & Schematics*: Xilinx Vivado
 
-<br/>
+---
 
 ## Directory Structure
 
@@ -78,36 +75,35 @@ All designs are written in concise, industry-style Verilog. Each block comes wit
 │   └── HS_testbench
 └── testbench/
 ```
-> **Note:** All waveform and schematic images are contained locally within each module’s folder for clarity and reproducibility.
+> **Note:** Each module's folder contains its source (`*.v`), simulation waveform, RTL schematic, technology schematic, and local testbench.
 
 ---
 
 ## Module Descriptions
 
-Each folder contains:
-- `*.v`: Verilog source for the corresponding arithmetic unit.
-- **Waveform (`OP_WAVEFORM.png`)**: Screenshot of simulation output, demonstrating correct operation.
-- **RTL Schematic (`RTL_Schematic.png`)**: Post-synthesis register-transfer-level schematic from Vivado.
-- **Technology Schematic (`Technology Schematic.png`)**: Physical gate-level view after technology mapping.
-- **Testbench**: Automated stimulus generator and self-checking unit.
+- `*.v` — Verilog source for the arithmetic unit
+- `OP_WAVEFORM.png` (or similar) — Simulation output as waveform image
+- `RTL_Schematic.png` — RTL schematic (Vivado)
+- `Technology Schematic.png` — Technology-mapped schematic (Vivado)
+- `Testbench` — Automated testbench for all input combinations
 
-| Module              | Operations    | Folder           |
-|---------------------|--------------|------------------|
-| Half Adder          | a+b (sum,carry)       | `HALF_Adder/`  |
-| Full Adder          | a+b+cin (sum,carry)   | `FULL_Adder/`  |
-| Half Subtractor     | a-b (diff,borrow)     | `HALF_Subtractor/` |
-| Full Subtractor     | a-b-bin (diff,borrow) | `Full_Subtractor/` |
+| Module           | Main Operation     | Folder           |
+|------------------|-------------------|------------------|
+| Half Adder       | a + b (sum, carry)| HALF_Adder/      |
+| Full Adder       | a + b + cin       | FULL_Adder/      |
+| Half Subtractor  | a - b (diff, borrow) | HALF_Subtractor/ |
+| Full Subtractor  | a - b - bin       | Full_Subtractor/ |
 
 ---
 
 ## Testbenches & Verification
 
-- Each module is comprehensively tested with its relevant testbench (located in its directory).
-- Tests include **all input combinations** for 1-bit adder and subtractor circuits.
-- Simulation output is saved as PNG waveform images.
-- For reproducibility, you can re-run simulations using Icarus Verilog or Vivado’s simulator.
+- Each module is tested with a dedicated testbench (within its module folder).
+- **All input combinations** for single-bit adder/subtractor circuits.
+- Simulation results are saved as PNG images.
+- Re-run simulations using either Icarus Verilog or Vivado for reproducibility.
 
-**Sample simulation output (from OP_WAVEFORM.png):**
+**Sample output (from `OP_WAVEFORM.png`):**
 ```
 Input: a=1, b=0, cin=1   |   Full Adder Output: sum=0, carry=1
 Input: a=1, b=1, bin=0   |   Full Subtractor Output: diff=0, borrow=0
@@ -117,21 +113,22 @@ Input: a=1, b=1, bin=0   |   Full Subtractor Output: diff=0, borrow=0
 
 ## RTL & Technology Schematics
 
-- All synthesized using Vivado:  
-  - RTL schematics precisely illustrate the functional hierarchy.
-  - Technology schematics display the mapped logic gates and interconnections.
-- **Refer to the included schematic images in each module directory.** These are crucial for demonstrating your competence in using professional FPGA and ASIC toolchains.
+- Generated using Vivado:
+  - RTL schematics illustrate the functional hierarchy.
+  - Technology schematics show actual gate/resource mapping.
+- See `RTL_Schematic.png` and `Technology Schematic.png` in each module directory.
 
 ---
 
 ## How to Run (Simulation & Schematic Extraction)
 
-#### Prerequisites
+### Prerequisites
 
-- **Simulation:** Icarus Verilog, GTKWave *(open-source, cross-platform)*
-- **Synthesis & Schematics:** Xilinx Vivado *(for RTL/technology diagrams)*
+- **Simulation:** [Icarus Verilog](https://iverilog.fandom.com/wiki/Installation_Guide), [GTKWave](http://gtkwave.sourceforge.net/) (optional)
+- **Synthesis/Schematics:** Xilinx Vivado
 
-#### Simulation Example (Icarus Verilog)
+### Example: Simulate Half Adder with Icarus
+
 ```sh
 cd HALF_Adder
 iverilog -o ha_sim Half_Adder.v Testbench_ha
@@ -139,46 +136,38 @@ vvp ha_sim
 gtkwave dump.vcd &
 ```
 
-#### Generate Schematics (Vivado)
-
-- Create a new Vivado project.
-- Add `*.v` sources from desired module.
-- Run synthesis.
-- Open "RTL Analysis" for RTL schematic.
-- Open "Technology Schematic" for gate-level mapping.
-- Export/capture screenshots as shown in `/FULL_Adder/`, etc.
+### Example: Generate Schematics with Vivado
+- Create new Vivado project, add relevant `.v` files
+- Run synthesis
+- View RTL & Technology Schematic, export screenshots
 
 ---
 
 ## Best Practices & Extensibility
 
-- Modular structure ensures easy integration in larger ALU/datapath projects.
-- All code follows best practices for digital logic design and testbench structure.
-- You are encouraged to extend with multi-bit versions or parameterized designs as interview/assignment ready skill demonstrations.
+- Modular, standalone code enables easy reuse in ALUs or datapaths
+- Follows industry and academic conventions for HDL structure and simulation
+- Consider extending with parameterized/multi-bit adders or subtractors!
 
 ---
 
 ## License
 
-This repository is released under MIT License.  
-*See [LICENSE](./LICENSE) for details.*
+This project is licensed under the MIT License.  
+See [LICENSE](LICENSE) for details.
 
 ---
 
 ## Contact
 
-Author: [230140111021tej](https://github.com/230140111021tej)  
-**For questions, suggestions, or contributions – open an issue or pull request!**
+Author: [Tejas R Mallah (230140111021tej)](https://github.com/230140111021tej)  
+- **LinkedIn:** [Profile](https://www.linkedin.com/posts/tejas-r-mallah-28052b283_verilog-fpga-digitaldesign-activity-7364343834392113152-s981?utm_source=share&utm_medium=member_desktop&rcm=ACoAAET0mcABoSmVvowkUz7qcSZkG2bhRVZnDQ4)
+- **Email:** tejasmallah@gmail.com
 
 ---
 
-*This README is designed for professional readability and technical screening. All images referenced are contained in this repository – please ensure you do not reference images by broken links or external names.*
+_Questions, feedback, or collaboration proposals welcome!_
 
-<!--
-Screenshots are available locally (do NOT use image1/image2/image3, use only repo files). Remove image links if not included in repo.
--->
----
-
-## License
-
-This project is for academic and educational use.
+```
+#Verilog #DigitalDesign #Adder #Subtractor #Vivado #Testbench #FPGA #RTL #EDA
+```
