@@ -1,0 +1,20 @@
+**Half Subtractor**
+
+
+`include "half_subtractor.v"
+
+module test_half_subtractor;
+    reg a, b;
+    wire diff, borrow;
+    half_subtractor DUT(a, b, diff, borrow);
+    initial begin
+        $display("Half Subtractor Truth Table");
+        $display("A B | DIFF BORROW");
+        for (integer i = 0; i < 4; i = i + 1) begin
+            a = i[1]; b = i[0];
+            #1;
+            $display("%b %b |  %b     %b", a, b, diff, borrow);
+        end
+        $finish;
+    end
+endmodule
