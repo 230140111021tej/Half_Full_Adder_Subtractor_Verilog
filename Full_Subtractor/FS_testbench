@@ -1,0 +1,20 @@
+**Full Subtractor**
+
+
+`include "full_subtractor.v"
+
+module test_full_subtractor;
+    reg a, b, bin;
+    wire diff, borrow;
+    full_subtractor DUT(a, b, bin, diff, borrow);
+    initial begin
+        $display("Full Subtractor Truth Table");
+        $display("A B BIN | DIFF BORROW");
+        for (integer i = 0; i < 8; i = i + 1) begin
+            a = i[2]; b = i[1]; bin = i[0];
+            #1;
+            $display("%b %b  %b |  %b     %b", a, b, bin, diff, borrow);
+        end
+        $finish;
+    end
+endmodule
