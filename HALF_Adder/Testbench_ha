@@ -1,0 +1,20 @@
+**Half Adder**
+
+
+`include "half_adder.v"
+
+module test_half_adder;
+    reg a, b;
+    wire sum, carry;
+    half_adder DUT(a, b, sum, carry);
+    initial begin
+        $display("Half Adder Truth Table");
+        $display("A B | SUM CARRY");
+        for (integer i = 0; i < 4; i = i + 1) begin
+            a = i[1]; b = i[0];
+            #1;
+            $display("%b %b |  %b    %b", a, b, sum, carry);
+        end
+        $finish;
+    end
+endmodule
