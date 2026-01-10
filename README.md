@@ -19,6 +19,20 @@ All modules are synthesized and visualized using industry-standard tools like **
 
 ---
 
+- **Full Adder**  
+  [YouTube Demo](https://youtube.com/shorts/YUpM37PON2s?feature=shared)
+
+- **Full Subtractor**  
+  [YouTube Demo](https://youtube.com/shorts/F-r96FAdp4E?si=rx6YhmUOveSDVush)
+
+- **Half Adder**  
+  [YouTube Demo](https://youtube.com/shorts/DaoT0IykHmo?si=SLKe4n4rGXW07Vkw)
+
+- **Half Subtractor**  
+  [YouTube Demo](https://youtube.com/shorts/OssNW_W3E6k?si=Qf98I_jwUKjFF4Ek)
+
+  ---
+
 ## Project Overview
 
 This project implements and verifies:
