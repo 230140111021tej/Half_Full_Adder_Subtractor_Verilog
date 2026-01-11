@@ -131,9 +131,13 @@ Input: a=1, b=1, bin=0   |   Full Subtractor Output: diff=0, borrow=0
 
 ```sh
 cd HALF_Adder
-iverilog -o testbench_name.vvp testbench_name.v   (Replace testbench_name with your actual testbench file name.)
+
+# Replace testbench_name with your actual testbench file name
+iverilog -o testbench_name.vvp testbench_name.v
 vvp testbench_name.vvp
-gtkwave half_add.vcd 
+
+# Use whatever .vcd file name you generated; half_add.vcd is just a reference
+gtkwave half_add.vcd
 ```
 
 ### Example: Generate Schematics with Vivado
