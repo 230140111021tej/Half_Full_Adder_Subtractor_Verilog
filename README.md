@@ -51,27 +51,27 @@ Each design follows modular, industry-style Verilog practices and comes with:
 .
 ├── FULL_Adder/
 │   ├── Full_Adder.v
-│   ├── OP_WAVEFORM.png
+│   ├── OP_Waveform.png
 │   ├── RTL_SCHEMATIC.png
-│   ├── Technology schematic.png
+│   ├── Technology_Schematic.png
 │   └── Testbench
 ├── Full_Subtractor/
 │   ├── Full_Subtractor.v
 │   ├── OP_Waveform.png
 │   ├── RTL_Schematic.png
-│   ├── Technology Schematic.png
+│   ├── Technology_Schematic.png
 │   └── FS_testbench
 ├── HALF_Adder/
 │   ├── Half_Adder.v
-│   ├── OP_waveform.png
+│   ├── OP_Waveform.png
 │   ├── RTL_Schematic.png
-│   ├── Technology Schematic.png
+│   ├── Technology_Schematic.png
 │   └── Testbench_ha
 ├── HALF_Subtractor/
 │   ├── Half_subtractor.v
-│   ├── Op_waveform.png
+│   ├── Op_Waveform.png
 │   ├── RTL_Schematic.png
-│   ├── Technology_schematic.png
+│   ├── Technology_Schematic.png
 │   └── HS_testbench
 └── testbench/
 ```
@@ -131,7 +131,7 @@ Input: a=1, b=1, bin=0   |   Full Subtractor Output: diff=0, borrow=0
 
 ```sh
 cd HALF_Adder
-iverilog -o testbench_name.vvp testbench_name.v
+iverilog -o testbench_name.vvp testbench_name.v   (Replace testbench_name with your actual testbench file name.)
 vvp testbench_name.vvp
 gtkwave half_add.vcd 
 ```
