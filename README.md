@@ -131,9 +131,9 @@ Input: a=1, b=1, bin=0   |   Full Subtractor Output: diff=0, borrow=0
 
 ```sh
 cd HALF_Adder
-iverilog -o ha_sim Half_Adder.v Testbench_ha
-vvp ha_sim
-gtkwave dump.vcd &
+iverilog -o testbench_name.vvp testbench_name.v
+vvp testbench_name.vvp
+gtkwave half_add.vcd 
 ```
 
 ### Example: Generate Schematics with Vivado
